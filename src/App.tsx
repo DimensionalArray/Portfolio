@@ -1,4 +1,4 @@
-import { DesktopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import { DesktopIcon, EnvelopeOpenIcon, GitHubLogoIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import {
     Theme,
     Flex,
@@ -241,8 +241,17 @@ export default function App() {
                     </Text>
 
                     <Flex gap="4">
-                        <Link href="mailto:your@email.com">Email</Link>
-                        <Link href="https://github.com/DimensionalArray">GitHub</Link>
+                        <Link href="mailto:your@email.com" >
+                            <Flex align="center" gap="1">
+                                <EnvelopeOpenIcon style={{ marginBottom: "1px" }} /> Email
+                            </Flex>
+                        </Link>
+
+                        <Link href="https://github.com/DimensionalArray">
+                            <Flex align="center" gap="1">
+                                <GitHubLogoIcon style={{ marginBottom: "2px" }} /> GitHub
+                            </Flex>
+                        </Link>
                     </Flex>
                 </Flex>
             </Flex>
