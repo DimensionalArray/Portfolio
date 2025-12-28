@@ -72,6 +72,7 @@ export default function App() {
                         <Flex gap="4" style={{ alignItems: "center" }}>
                             <Link href="#projects">Projects</Link>
                             <Link href="#skills">Skills</Link>
+                            <Link href="#about">About</Link>
                             <Link href="#contact">Contact</Link>
 
                             <IconButton
@@ -202,7 +203,7 @@ export default function App() {
                 </Box>
 
                 {/* About */}
-                <Box px="6">
+                <Box id="about" px="6">
                     <Heading size="6" mb="4">
                         About Me
                     </Heading>
