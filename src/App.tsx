@@ -11,15 +11,18 @@ import {
     Badge,
     Link,
     Separator,
-    IconButton
+    IconButton,
+    Blockquote
 } from "@radix-ui/themes"
 import "@radix-ui/themes/styles.css"
 import { useEffect, useState } from "react"
 
-export default function IndexPage() {
+export default function App() {
     type Theme = "system" | "light" | "dark"
 
     const [theme, setTheme] = useState<Theme>(getTheme())
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
     function getTheme() {
         const storedTheme = localStorage.getItem("theme")
@@ -38,6 +41,12 @@ export default function IndexPage() {
         localStorage.setItem("theme", theme)
     }, [theme])
 
+    useEffect(() => {
+        const onResize = () => setWindowWidth(window.innerWidth)
+        window.addEventListener("resize", onResize)
+        return () => window.removeEventListener("resize", onResize)
+    }, [])
+
     return (
         <Theme
             appearance={getAppearance()}
@@ -51,6 +60,7 @@ export default function IndexPage() {
                 {/* Header */}
                 <Flex
                     asChild
+                    direction={windowWidth < 400 ? "column" : "row"}
                     justify="between"
                     align="center"
                     px="6"
@@ -77,7 +87,7 @@ export default function IndexPage() {
                     </header>
                 </Flex>
 
-                <Separator />
+                <Separator size="4" />
 
                 {/* Hero */}
                 <Flex
@@ -120,19 +130,28 @@ export default function IndexPage() {
                         Projects
                     </Heading>
 
-                    <Grid columns={{ initial: "1", md: "2" }} gap="5">
+                    <Grid columns={{ initial: "1" }} gap="5">
                         <Card>
-                            <Heading size="4">Chat Application</Heading>
-                            <Text size="2" color="gray" mt="2">
-                                Full-stack real-time chat app with Django, React,
-                                WebSockets, and Docker.
-                            </Text>
+                            <Flex direction="column" gap="3">
+                                <Heading size="4">Chatbot</Heading>
+                                <Text size="3" color="gray">
+                                    Full-stack AI personal assistant web app with real-time chat, message editing, and file uploads.
+                                </Text>
+                            </Flex>
 
                             <Flex gap="2" mt="3" wrap="wrap">
                                 <Badge>Python</Badge>
                                 <Badge>Django</Badge>
+                                <Badge>WebSockets</Badge>
+                                <Badge>Vite</Badge>
                                 <Badge>React</Badge>
                                 <Badge>Docker</Badge>
+                            </Flex>
+
+                            <Flex direction="column" gap="2" mt="3" wrap="wrap">
+                                <Text>• Real-time chat via WebSockets</Text>
+                                <Text>• Message editing & conversation history</Text>
+                                <Text>• File uploads with backend validation</Text>
                             </Flex>
 
                             <Flex gap="3" mt="4">
@@ -140,24 +159,6 @@ export default function IndexPage() {
                                     GitHub
                                 </Link>
                                 <Link href="#">Live Demo</Link>
-                            </Flex>
-                        </Card>
-
-                        <Card>
-                            <Heading size="4">Admin Dashboard</Heading>
-                            <Text size="2" color="gray" mt="2">
-                                Role-based admin dashboard with REST APIs and
-                                responsive UI.
-                            </Text>
-
-                            <Flex gap="2" mt="3" wrap="wrap">
-                                <Badge>Django REST</Badge>
-                                <Badge>React</Badge>
-                                <Badge>TypeScript</Badge>
-                            </Flex>
-
-                            <Flex gap="3" mt="4">
-                                <Link href="#">GitHub</Link>
                             </Flex>
                         </Card>
                     </Grid>
@@ -173,7 +174,7 @@ export default function IndexPage() {
                         <Card>
                             <Heading size="3">Backend</Heading>
                             <Text size="2" color="gray" mt="2">
-                                Python, Django, Django REST Framework
+                                Python, Django, Django REST Framework, WebSockets
                             </Text>
                         </Card>
 
@@ -206,17 +207,26 @@ export default function IndexPage() {
                         About Me
                     </Heading>
 
-                    <Text size="3" color="gray">
-                        I enjoy working across the stack, from designing clean APIs
-                        to building accessible and responsive user interfaces.
-                        I care about maintainable code, thoughtful architecture,
-                        and real-world usability.
-                    </Text>
+                    <Blockquote>
+                        <Flex direction="column" gap="3">
+                            <Text size="3" color="gray">
+                                I’m a full-stack software engineer who enjoys working across the stack,
+                                with a particular interest in backend architecture and real-time systems.
+                                I like building applications that are reliable, maintainable,
+                                and easy to reason about, from clean APIs to responsive user interfaces.
+                            </Text>
+
+                            <Text size="3" color="gray">
+                                I value clear abstractions, thoughtful tradeoffs, and continuous learning,
+                                and I’m looking for opportunities to contribute to well-engineered products while growing as an engineer.
+                            </Text>
+                        </Flex>
+                    </Blockquote>
                 </Box>
 
-                {/* Footer / Contact */}
-                <Separator />
+                <Separator size="4" />
 
+                {/* Footer */}
                 <Flex
                     id="contact"
                     direction="column"
