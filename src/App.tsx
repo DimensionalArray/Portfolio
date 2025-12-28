@@ -1,3 +1,4 @@
+import { DesktopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import {
     Theme,
     Flex,
@@ -10,13 +11,36 @@ import {
     Badge,
     Link,
     Separator,
+    IconButton
 } from "@radix-ui/themes"
 import "@radix-ui/themes/styles.css"
+import { useEffect, useState } from "react"
 
 export default function IndexPage() {
+    type Theme = "system" | "light" | "dark"
+
+    const [theme, setTheme] = useState<Theme>(getTheme())
+
+    function getTheme() {
+        const storedTheme = localStorage.getItem("theme")
+        if (storedTheme === "system" || storedTheme === "light" || storedTheme === "dark") {
+            return storedTheme
+        } else {
+            return "system"
+        }
+    }
+
+    function getAppearance() {
+        return theme === "system" ? matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" : theme
+    }
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme)
+    }, [theme])
+
     return (
         <Theme
-            appearance="light"
+            appearance={getAppearance()}
             accentColor="indigo"
             grayColor="gray"
             radius="medium"
@@ -35,10 +59,20 @@ export default function IndexPage() {
                     <header>
                         <Heading size="4">Gabriel</Heading>
 
-                        <Flex gap="4">
+                        <Flex gap="4" style={{ alignItems: "center" }}>
                             <Link href="#projects">Projects</Link>
                             <Link href="#skills">Skills</Link>
                             <Link href="#contact">Contact</Link>
+
+                            <IconButton
+                                aria-label="Toggle theme"
+                                onClick={() => setTheme(theme === "system" ? "light" : theme === "light" ? "dark" : "system")}
+                                style={{ cursor: "pointer" }}
+                            >
+                                {theme === "system" && <DesktopIcon />}
+                                {theme === "light" && <SunIcon />}
+                                {theme === "dark" && <MoonIcon />}
+                            </IconButton>
                         </Flex>
                     </header>
                 </Flex>
