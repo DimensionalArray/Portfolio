@@ -17,6 +17,9 @@ import {
 import "@radix-ui/themes/styles.css"
 import { useEffect, useState } from "react"
 
+import chatbotDarkScreenshotURL from "./screenshots/chatbot_dark.jpeg"
+import chatbotLightScreenshotURL from "./screenshots/chatbot_light.jpeg"
+
 export default function App() {
     type Theme = "system" | "light" | "dark"
 
@@ -135,6 +138,7 @@ export default function App() {
                         <Card>
                             <Flex direction="column" gap="3">
                                 <Heading size="4">Chatbot</Heading>
+                                <img src={getAppearance() === "dark" ? chatbotDarkScreenshotURL : chatbotLightScreenshotURL} width={windowWidth < 720 ? "auto" : 720} />
                                 <Text size="3" color="gray">
                                     Full-stack AI personal assistant web app with real-time chat, message editing, and file uploads.
                                 </Text>
