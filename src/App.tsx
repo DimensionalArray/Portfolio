@@ -62,33 +62,30 @@ export default function App() {
 
                 {/* Header */}
                 <Flex
-                    asChild
-                    direction={windowWidth < 400 ? "column" : "row"}
+                    direction={windowWidth < 450 ? "column" : "row"}
                     justify="between"
                     align="center"
                     px="6"
                     py="4"
                 >
-                    <header>
-                        <Heading size="4">Gabriel</Heading>
+                    <Heading size="4">Gabriel</Heading>
 
-                        <Flex gap="4" style={{ alignItems: "center" }}>
-                            <Link href="#projects">Projects</Link>
-                            <Link href="#skills">Skills</Link>
-                            <Link href="#about">About</Link>
-                            <Link href="#contact">Contact</Link>
+                    <Flex gap="4" style={{ alignItems: "center" }}>
+                        <Link href="#projects">Projects</Link>
+                        <Link href="#skills">Skills</Link>
+                        <Link href="#about">About</Link>
+                        <Link href="#contact">Contact</Link>
 
-                            <IconButton
-                                aria-label="Toggle theme"
-                                onClick={() => setTheme(theme === "system" ? "light" : theme === "light" ? "dark" : "system")}
-                                style={{ cursor: "pointer" }}
-                            >
-                                {theme === "system" && <DesktopIcon />}
-                                {theme === "light" && <SunIcon />}
-                                {theme === "dark" && <MoonIcon />}
-                            </IconButton>
-                        </Flex>
-                    </header>
+                        <IconButton
+                            aria-label="Toggle theme"
+                            onClick={() => setTheme(theme === "system" ? "light" : theme === "light" ? "dark" : "system")}
+                            style={{ cursor: "pointer" }}
+                        >
+                            {theme === "system" && <DesktopIcon />}
+                            {theme === "light" && <SunIcon />}
+                            {theme === "dark" && <MoonIcon />}
+                        </IconButton>
+                    </Flex>
                 </Flex>
 
                 <Separator size="4" />
