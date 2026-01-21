@@ -59,8 +59,6 @@ export default function App() {
             scaling="100%"
         >
             <Flex direction="column" gap="9">
-
-                {/* Header */}
                 <Flex
                     direction={windowWidth < 450 ? "column" : "row"}
                     justify="between"
@@ -91,7 +89,6 @@ export default function App() {
 
                 <Separator size="4" />
 
-                {/* Hero */}
                 <Flex
                     direction="column"
                     align="center"
@@ -125,7 +122,6 @@ export default function App() {
                     </Flex>
                 </Flex>
 
-                {/* Projects */}
                 <Box id="projects" px="6">
                     <Heading size="6" mb="5">
                         Projects
@@ -157,16 +153,14 @@ export default function App() {
                             </Flex>
 
                             <Flex gap="3" mt="4">
-                                <Link href="https://github.com/DimensionalArray/Chatbot">
-                                    GitHub
+                                <Link href="https://github.com/DimensionalArray/Chatbot" style={{ display: "flex", gap: "4px", alignItems: "center" }}>
+                                    <GitHubLogoIcon /> GitHub
                                 </Link>
-                                <Link href="#">Live Demo</Link>
                             </Flex>
                         </Card>
                     </Grid>
                 </Box>
 
-                {/* Skills */}
                 <Box id="skills" px="6">
                     <Heading size="6" mb="5">
                         Skills
@@ -190,20 +184,19 @@ export default function App() {
                         <Card>
                             <Heading size="3">DevOps</Heading>
                             <Text size="2" color="gray" mt="2">
-                                Docker, Docker Compose
+                                Docker, Docker Compose, Dev Containers
                             </Text>
                         </Card>
 
                         <Card>
                             <Heading size="3">Tools</Heading>
                             <Text size="2" color="gray" mt="2">
-                                Git, GitHub, Linux
+                                VS Code, Git, GitHub, Linux
                             </Text>
                         </Card>
                     </Grid>
                 </Box>
 
-                {/* About */}
                 <Box id="about" px="6">
                     <Heading size="6" mb="4">
                         About Me
@@ -228,7 +221,6 @@ export default function App() {
 
                 <Separator size="4" />
 
-                {/* Footer */}
                 <Flex
                     id="contact"
                     direction="column"
