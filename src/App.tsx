@@ -17,8 +17,8 @@ import {
 import "@radix-ui/themes/styles.css"
 import { useEffect, useState } from "react"
 
-import chatbotDarkScreenshotURL from "./screenshots/chatbot_dark.jpeg"
-import chatbotLightScreenshotURL from "./screenshots/chatbot_light.jpeg"
+import chatbotDarkScreenshotURL from "./screenshots/chatbot_dark.png"
+import chatbotLightScreenshotURL from "./screenshots/chatbot_light.png"
 
 export default function App() {
     type Theme = "system" | "light" | "dark"
