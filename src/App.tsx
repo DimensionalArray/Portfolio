@@ -1,4 +1,4 @@
-import { DesktopIcon, EnvelopeOpenIcon, GitHubLogoIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import { DesktopIcon, GitHubLogoIcon, LinkedInLogoIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import {
     Theme,
     Flex,
@@ -119,6 +119,16 @@ export default function App() {
                                 GitHub
                             </a>
                         </Button>
+
+                        <Button asChild size="3" variant="outline">
+                            <a
+                                href="https://linkedin.com/in/gabrielschieber"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                LinkedIn
+                            </a>
+                        </Button>
                     </Flex>
                 </Flex>
 
@@ -154,7 +164,7 @@ export default function App() {
 
                             <Flex gap="3" mt="4">
                                 <Link href="https://github.com/GabrielSchieber/Chatbot" style={{ display: "flex", gap: "4px", alignItems: "center" }}>
-                                    <GitHubLogoIcon /> GitHub
+                                    <GitHubLogoIcon width={20} height={20} /> GitHub
                                 </Link>
                             </Flex>
                         </Card>
@@ -230,20 +240,20 @@ export default function App() {
                     pb="6"
                     mt="-5"
                 >
-                    <Text size="2" color="gray">
+                    <Text size="3" color="gray">
                         Get in touch
                     </Text>
 
                     <Flex gap="4">
-                        <Link href="mailto:your@email.com" >
+                        <Link href="https://github.com/GabrielSchieber">
                             <Flex align="center" gap="1">
-                                <EnvelopeOpenIcon style={{ marginBottom: "1px" }} /> Email
+                                <GitHubLogoIcon width={20} height={20} /> GitHub
                             </Flex>
                         </Link>
 
-                        <Link href="https://github.com/GabrielSchieber">
+                        <Link href="https://linkedin.com/in/gabrielschieber">
                             <Flex align="center" gap="1">
-                                <GitHubLogoIcon style={{ marginBottom: "2px" }} /> GitHub
+                                <LinkedInLogoIcon width={20} height={20} /> LinkedIn
                             </Flex>
                         </Link>
                     </Flex>
