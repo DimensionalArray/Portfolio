@@ -1,4 +1,4 @@
-import { DesktopIcon, GitHubLogoIcon, LinkedInLogoIcon, LinkNone2Icon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import { DesktopIcon, GitHubLogoIcon, LinkedInLogoIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import {
     Theme,
     Flex,
@@ -112,31 +112,11 @@ export default function App() {
 
                         <Button asChild size="3" variant="outline">
                             <a
-                                href="https://github.com/GabrielSchieber"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                GitHub
-                            </a>
-                        </Button>
-
-                        <Button asChild size="3" variant="outline">
-                            <a
-                                href="https://linkedin.com/in/gabrielschieber"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                LinkedIn
-                            </a>
-                        </Button>
-
-                        <Button asChild size="3" variant="outline">
-                            <a
                                 href="https://fiverr.com/gabrielschieber"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                Fiverr
+                                Hire Me
                             </a>
                         </Button>
                     </Flex>
@@ -264,12 +244,6 @@ export default function App() {
                         <Link href="https://linkedin.com/in/gabrielschieber">
                             <Flex align="center" gap="1">
                                 <LinkedInLogoIcon width={20} height={20} /> LinkedIn
-                            </Flex>
-                        </Link>
-
-                        <Link href="https://fiverr.com/gabrielschieber">
-                            <Flex align="center" gap="1">
-                                <LinkNone2Icon width={20} height={20} /> Fiverr
                             </Flex>
                         </Link>
                     </Flex>
